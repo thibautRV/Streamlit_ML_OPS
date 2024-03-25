@@ -1,7 +1,12 @@
 from prometheus_client import Counter
 import streamlit as st
+import streamlit.config as st_config
 import pandas as pd
 import matplotlib.pyplot as plt
+
+
+st_config.set_option('server.fileWatcherType', 'none')
+st_config.set_option('browser.gatherUsageStats', False)
 
 # Prometheus counter to track button clicks
 button_click_counter = Counter('specific_button_clicks_total', 'Total number of clicks on the specific button')
